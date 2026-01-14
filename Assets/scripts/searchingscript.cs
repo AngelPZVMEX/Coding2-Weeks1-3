@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class searchingscript : MonoBehaviour
 {
+    public float ar = 0;
 
     public Vector2 start;
 
@@ -14,8 +15,8 @@ public class searchingscript : MonoBehaviour
     {
         start = transform.position;
 
-        end.x = Random.Range(-3, 3);
-        end.y = Random.Range(-3, 3);
+        end.x = Random.Range(-ar, ar);
+        end.y = Random.Range(-ar, ar);
     }
 
     // Update is called once per frame
@@ -29,8 +30,8 @@ public class searchingscript : MonoBehaviour
 
             start = transform.position;
 
-            end.x = Random.Range(-3, 3);
-            end.y = Random.Range(-3, 3);
+            end.x = Random.Range(-ar, ar);
+            end.y = Random.Range(-ar, ar);
         }
 
         transform.position = Vector2.Lerp(start, end, t);
