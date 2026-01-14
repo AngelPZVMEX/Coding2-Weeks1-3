@@ -26,6 +26,11 @@ public class searchingscript : MonoBehaviour
         if (t > 1)
         {
             t = 0;
+
+            start = transform.position;
+
+            end.x = Random.Range(-3, 3);
+            end.y = Random.Range(-3, 3);
         }
 
         transform.position = Vector2.Lerp(start, end, t);
