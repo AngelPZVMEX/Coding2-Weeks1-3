@@ -5,23 +5,28 @@ public class spritechanger : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
     public Color col;
+    public Sprite[] barrels;
+ 
+    public int randomNumber;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Pickarandomcolor();
+        //Pickarandomcolor();
+       PickARandomSprite();
     
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if( Keyboard.current.anyKey.wasPressedThisFrame == true)
-        // {
-        //     Pickarandomcolor();
-        // }
+        if (Keyboard.current.anyKey.wasPressedThisFrame == true)
+        {
+            //     Pickarandomcolor();
+            PickARandomSprite();
+        }
 
         //get mouse position
-       Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         //is it over sprite?
        if(spriteRenderer.bounds.Contains(mousePos))
         {
@@ -42,5 +47,13 @@ spriteRenderer.color = col;
     void Pickarandomcolor()
     {
  spriteRenderer.color = Random.ColorHSV();
+    }
+
+    void PickARandomSprite()
+    {
+        //get a random number 0-2
+        randomNumber = Random.Range(0, barrels.Length);
+
+       spriteRenderer.sprite = barrels[randomNumber];
     }
 }
