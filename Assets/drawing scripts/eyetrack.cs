@@ -29,7 +29,7 @@ public class eyetrack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+ // using the mouse position evaluate how to move the eye
         if (mousePos.x > 0)
         {
             end.x = middle.x + offset;
@@ -52,7 +52,7 @@ public class eyetrack : MonoBehaviour
 
         t += Time.deltaTime;
 
-        // using the mouse position evaluate how to move the eye
+       
         if (t > 1)
         {
             t = 0;
